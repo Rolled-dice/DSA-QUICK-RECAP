@@ -1,0 +1,19 @@
+selection sort...
+
+first we need to select the small element from the array then add in first position & remove the origninal position from the array
+can be n*(n-1)*(n-2)--- which is o(n^2).
+
+vector<int> selection_sort(vector<int>arr){
+   int n =arr.size();
+   vector<int>ans;
+   while(n--){
+    int minindex=0;
+    for(int i=1;i<arr.size();i++){
+      if(arr[i]<arr[minindex]) minindex=i;
+    }
+    ans.push_back(arr[minindex]);
+    arr.erase(arr.begin()+minindex);
+    
+}
+return ans;
+}
